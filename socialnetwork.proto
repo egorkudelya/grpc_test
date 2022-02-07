@@ -1,0 +1,28 @@
+syntax = "proto3";
+
+package socialnetwork;
+
+service SocialNetwork {
+  rpc AddUser(AddUserRequest) returns (Response) {}
+  rpc AddFriend(AddFriendRequest) returns (Response) {}
+  rpc GetFriendChain(ChainRequest) returns (Response) {}
+}
+
+message AddUserRequest {
+  string name = 1;
+  string tag = 2;
+}
+
+message AddFriendRequest {
+  string first_tag = 1;
+  string second_tag = 2;
+}
+
+message ChainRequest {
+  string first_tag = 1;
+  string second_tag = 2;
+}
+
+message Response {
+  string return_message = 1;
+}
